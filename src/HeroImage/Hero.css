@@ -1,0 +1,23 @@
+.hero {
+  height: 500px;
+}
+
+.hero_contents {
+  margin-left: 30px;
+  padding-top: 140px;
+  height: 190px;
+}
+
+.hero_title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+
+hero_buttons {
+}
+
+hero_btn1 {
+}
+hero_btn2 {
+}
