@@ -18,11 +18,11 @@ export default function Hero() {
     >
       <div className=" hero_contents">
         <h1 className="hero_title">Movie Name</h1>
-        <div className="hero_buttons">
-          <button className="p-2 rounded-sm transition-all ease-in duration-1000   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 w-28">
+        <div>
+          <button className="p-2 bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 w-28">
             Play
           </button>
-          <button className=" p-2 rounded-sm transition-all ease-in  duration-1000   cursor-pointer hover:bg-gray-700 text-black bg-gray-600 w-28 ">
+          <button className=" p-2 bg-opacity-70 rounded-sm transition-all ease-in  duration-100   cursor-pointer hover:bg-gray-700 text-black bg-gray-600 w-28 ">
             My List
           </button>
         </div>
