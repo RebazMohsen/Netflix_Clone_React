@@ -1,14 +1,25 @@
 import React from "react";
 import "./Hero.css";
+import delimeter from "../delimeter";
 
 export default function Hero() {
-  function delimeter(string, n) {
-    if (string.length > n) {
-      string = string.substring(0, n) + "...";
-    }
-    return string;
-  }
+  const axios = require("axios").default;
 
+  // Make a request for a user with a given ID
+  /*  axios
+    .get("/user?ID=12345")
+    .then(function (response) {
+      // handle success
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+    });
+ */
   return (
     <header
       style={{
