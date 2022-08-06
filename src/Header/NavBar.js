@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function NavBar() {
-  const [Show, setShow] = useState(true);
+  const [Show, setShow] = useState(false);
 
   const navShow = () => {
     if (window.scrollY > 100) {
