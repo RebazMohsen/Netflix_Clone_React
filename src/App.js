@@ -9,7 +9,7 @@ function App() {
       <NavBar />
       <Hero />
 
-      <Row title="Netflix Original" />
+      <Row title={"Netlix Originals"} />
     </div>
   );
 }

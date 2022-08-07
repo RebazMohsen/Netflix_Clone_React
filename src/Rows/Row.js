@@ -1,6 +1,6 @@
 import React from "react";
 import "./Row.css";
-export default function Row({ src, title }) {
+export default function Row({ title }) {
   return (
     <div className=" pt-[31px] ">
       <div className="pl-[60px]">
