@@ -34,7 +34,7 @@ export default function Hero() {
       .then(function () {
         // always executed
       });
-  }, [""]);
+  }, [axios]);
 
   return (
     <header
