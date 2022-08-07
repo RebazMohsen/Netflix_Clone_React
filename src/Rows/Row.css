@@ -1,0 +1,7 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.onHover:hover {
+  transform: scale(1.1);
+}

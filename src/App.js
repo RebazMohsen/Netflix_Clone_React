@@ -1,6 +1,7 @@
 import "./App.css";
 import NavBar from "./Header/NavBar";
 import Hero from "./HeroImage/Hero";
+import Row from "./Rows/Row";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <NavBar />
       <Hero />
 
-      {/* Rows of Cards */}
+      <Row title="Netflix Original" />
     </div>
   );
 }

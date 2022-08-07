@@ -25,8 +25,7 @@ export default function Hero() {
           response.data.results[getRandomInt(response.data.results.length - 1)]
         );
 
-        console.log(info);
-        console.log(info);
+        //console.log(info);
       })
       .catch(function (error) {
         // handle error
@@ -40,9 +39,9 @@ export default function Hero() {
   return (
     <header
       style={{
-        backgroundImage: `url(${imgBaseURL}${info.backdrop_path} )`,
+        backgroundImage: ` url(${imgBaseURL}${info.backdrop_path} )`,
       }}
-      className="hero bg-cover  bg-center text-white relative "
+      className="hero bg-cover  bg-center text-white relative  "
     >
       <div className=" hero_contents">
         <h1 className="hero_title">{info.title}</h1>
@@ -50,7 +49,7 @@ export default function Hero() {
           <button className="p-2 bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 w-28">
             Play
           </button>
-          <button className=" p-2 bg-opacity-70 rounded-sm transition-all ease-in  duration-100   cursor-pointer hover:bg-gray-700 text-black bg-gray-600 w-28 ">
+          <button className=" p-2 bg-opacity-75 rounded-sm transition-all ease-in  duration-100   cursor-pointer hover:bg-gray-700 text-black bg-gray-600 w-28 ">
             My List
           </button>
         </div>
