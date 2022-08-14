@@ -2,22 +2,24 @@ import React, { useState, useEffect } from "react";
 import "./Hero.css";
 import delimeter from "../delimeter";
 import getRandomInt from "../math";
+import axios from "axios";
 
 export default function Hero() {
   const axios = require("axios").default;
   const API_KEY = "8ba3d7653f6bc19597c5b7d8ef22ea73";
   const baseURL = "https://api.themoviedb.org/3";
-  const imgBaseURL = "https://image.tmdb.org/t/p/w500/";
+  const imgBaseURL = "https://image.tmdb.org/t/p/original";
   const [info, setInfo] = useState([
     {
       length: null,
     },
   ]);
 
-  // Make a request for a user with a given ID
   useEffect(() => {
     axios
-      .get(` ${baseURL}/trending/movie/day?api_key=${API_KEY} `)
+      .get(
+        ` ${baseURL}/trending/movie/day?api_key=${API_KEY}&with_networks=213 `
+      )
       .then((response) => {
         // handle success
 
@@ -36,15 +38,21 @@ export default function Hero() {
       });
   }, [axios]);
 
+  if (!info) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <header
       style={{
-        backgroundImage: ` url(${imgBaseURL}${info.backdrop_path} )`,
+        backgroundImage: `url${
+          info && `(${imgBaseURL}${info.backdrop_path} )`
+        } `,
       }}
-      className="hero bg-cover  bg-center text-white relative  "
+      className=" md:h-[580px] lg:h-[940px] bg-cover  bg-center text-white relative  "
     >
       <div className=" hero_contents">
-        <h1 className="hero_title">{info.title}</h1>
+        <h1 className="hero_title">{info.title || info.name}</h1>
         <div>
           <button className="p-2 bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 w-28">
             Play
