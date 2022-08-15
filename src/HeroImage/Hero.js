@@ -8,7 +8,7 @@ export default function Hero() {
   const axios = require("axios").default;
   const API_KEY = "8ba3d7653f6bc19597c5b7d8ef22ea73";
   const baseURL = "https://api.themoviedb.org/3";
-  const imgBaseURL = "https://image.tmdb.org/t/p/original";
+  const imgBaseURL = "https://image.tmdb.org/t/p/original/";
   const [info, setInfo] = useState([
     {
       length: null,
@@ -35,6 +35,7 @@ export default function Hero() {
       })
       .then(function () {
         // always executed
+        console.log("Hello ", `${imgBaseURL}${info.backdrop_path}`);
       });
   }, [axios]);
 
