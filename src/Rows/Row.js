@@ -8,18 +8,11 @@ function Row({ title, fetchMovie }) {
     async function fetchData() {
       const request = await axios.get(fetchMovie);
       setMovies(request.data.results);
-
+      console.log(movies);
       return request;
     }
     fetchData();
   }, [fetchMovie]);
-
-  useEffect(() => {
-    console.log(
-      "Hello ",
-      `https://image.tmdb.org/t/p/original${movies.backdrop_path}`
-    );
-  });
 
   if (movies === undefined) {
     return <h1>Error</h1>;
@@ -30,18 +23,19 @@ function Row({ title, fetchMovie }) {
   }
 
   return (
-    <div className=" pt-[31px] ">
+    <div className="row-container pt-[31px] ">
       <div className="pl-[60px]">
         <div>
-          <h1>{title}</h1>
+          <h1 className="text-white">{title}</h1>
         </div>
         <div className="flex overflow-scroll p-[10px]  ">
           {movies?.map((item, id) => (
             <img
+              className="onHover hover:shadow-2xl transition-all duration-700  w-[219px]  h-[121px] mt-[15px]  mr-6 "
               key={id}
               src={
                 movies &&
-                `https://image.tmdb.org/t/p/original${item.backdrop_path} `
+                `https://image.tmdb.org/t/p/original${item?.backdrop_path} `
               }
               alt="backdrop"
             />

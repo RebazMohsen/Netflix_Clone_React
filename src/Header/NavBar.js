@@ -32,7 +32,7 @@ function NavBar() {
 
         <div>
           <img
-            className=" fixed cursor-pointer object-contain top-4 right-1 w-10 h-10"
+            className=" fixed cursor-pointer object-contain top-4 right-3 w-10 h-10 rounded-md"
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117"
             alt="avatar"
           />
