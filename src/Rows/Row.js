@@ -29,10 +29,12 @@ function Row({ title, fetchMovie, isLarge = false }) {
         <div>
           <h1 className="text-white">{title}</h1>
         </div>
-        <div className="flex overflow-scroll p-[10px] ">
+        <div className={`flex overflow-scroll p-[10px]  `}>
           {movies?.map((item, id) => (
             <img
-              className="onHover hover:shadow-2xl transition-all duration-700  w-[219px]  h-[121px] mt-[15px]  mr-6 "
+              className={`onHover hover:shadow-2xl transition-all duration-700  w-[219px]  h-[121px] mt-[15px]  mr-6 ${
+                isLarge ? "largePoster h-[270px] hover:scale-0  " : " "
+              }`}
               key={id}
               src={
                 movies &&
