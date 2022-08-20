@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./Row.css";
 import axios from "../axios";
-function Row({ title, fetchMovie }) {
+function Row({ title, fetchMovie, isLarge = false }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchMovie);
       setMovies(request.data.results);
-      console.log(movies);
+
       return request;
     }
     fetchData();
+    console.log(movies);
   }, [fetchMovie]);
 
   if (movies === undefined) {
@@ -28,14 +29,16 @@ function Row({ title, fetchMovie }) {
         <div>
           <h1 className="text-white">{title}</h1>
         </div>
-        <div className="flex overflow-scroll p-[10px]  ">
+        <div className="flex overflow-scroll p-[10px] ">
           {movies?.map((item, id) => (
             <img
               className="onHover hover:shadow-2xl transition-all duration-700  w-[219px]  h-[121px] mt-[15px]  mr-6 "
               key={id}
               src={
                 movies &&
-                `https://image.tmdb.org/t/p/original${item?.backdrop_path} `
+                `https://image.tmdb.org/t/p/original${
+                  isLarge ? item?.poster_path : item?.backdrop_path
+                } `
               }
               alt="backdrop"
             />

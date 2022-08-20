@@ -10,7 +10,11 @@ function App() {
       <NavBar />
       <Hero />
 
-      <Row title={"Netlix Originals"} fetchMovie={requests.NetflixOriginals} />
+      <Row
+        title={"Netlix Originals"}
+        fetchMovie={requests.NetflixOriginals}
+        isLarge="true"
+      />
       <Row title={"upcoming"} fetchMovie={requests.upcoming} />
       <Row title={"Trending of day"} fetchMovie={requests.TrendingDay} />
       <Row title={"Trending of week"} fetchMovie={requests.TrendingWeek} />
