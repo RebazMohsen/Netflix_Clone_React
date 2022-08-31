@@ -3,6 +3,7 @@ import NavBar from "./Header/NavBar";
 import Hero from "./HeroImage/Hero";
 import Row from "./Rows/Row";
 import requests from "./requests";
+import Footer from "./Footer/Footer";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
       <Row title={"Documentaries"} fetchMovie={requests.Documentaries} />
       <Row title={"Horror"} fetchMovie={requests.Horror} />
       <Row title={"Crime"} fetchMovie={requests.crime} />
+      <div className="p-10 bg-black" />
+      <Footer />
     </div>
   );
 }

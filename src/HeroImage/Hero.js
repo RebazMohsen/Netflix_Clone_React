@@ -52,6 +52,7 @@ export default function Hero() {
       }}
       className="hero__img sm:h-[580px] md:h-[940px] bg-cover  bg-center text-white relative  "
     >
+      <div className="shader" />
       <div className={`hero_contents  sm:pt-[250px]  sm:h-[90vh] sm:w-[100%]`}>
         <h1 className="hero_title sm:text-5xl font-bold pb-[3rem]  ">
           {info.title || info.name}

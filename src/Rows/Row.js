@@ -57,7 +57,7 @@ function Rows({ title, fetchMovie, isLarge = false }) {
           slidesToShow: 5,
           slidesToScroll: 5,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -67,7 +67,7 @@ function Rows({ title, fetchMovie, isLarge = false }) {
           slidesToShow: 4,
           slidesToScroll: 4,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -90,12 +90,12 @@ function Rows({ title, fetchMovie, isLarge = false }) {
     ],
   };
   return (
-    <div className="row-container pt-[31px] ">
+    <div className="row-container pt-[31px]   ">
       <div className="pl-[60px] pr-[60px]">
         <div>
           <h1 className="text-white">{title}</h1>
         </div>
-        <Slider {...settings}>
+        <Slider {...settings} className="pb-2 ">
           {movies?.map((movie, id) => (
             <div
               className={
@@ -107,7 +107,7 @@ function Rows({ title, fetchMovie, isLarge = false }) {
               <img
                 className={`onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
                   isLarge
-                    ? "largePoster md:h-[320px] md:pt-[50px] md:w-[150px] lg:h-[520px] lg:w-[250px] "
+                    ? "largePoster md:h-[320px]   md:w-[150px] lg:h-[550px] lg:w-[250px] "
                     : "md:w-[150px]  md:h-[100px] lg:h-[150px] lg:w-[250px] "
                 }`}
                 key={id}
