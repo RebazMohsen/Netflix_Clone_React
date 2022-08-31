@@ -17,6 +17,7 @@
 - autoprefixer
 - postcss
 - tailwindcss
+- React-Resposive-Carousel
 - More to be added
 
 # Available Scripts

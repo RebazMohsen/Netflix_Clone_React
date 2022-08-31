@@ -9,3 +9,7 @@
 .row-container {
   background-color: #000000;
 }
+
+img {
+  text-indent: -9999px;
+}
