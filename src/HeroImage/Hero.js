@@ -50,19 +50,23 @@ export default function Hero() {
           info && `(${imgBaseURL}${info.backdrop_path} )`
         } `,
       }}
-      className=" md:h-[580px] lg:h-[940px] bg-cover  bg-center text-white relative  "
+      className="hero__img sm:h-[580px] md:h-[940px] bg-cover  bg-center text-white relative  "
     >
-      <div className=" hero_contents">
-        <h1 className="hero_title">{info.title || info.name}</h1>
-        <div>
-          <button className="p-2 bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 w-28">
+      <div className={`hero_contents  sm:pt-[250px]  sm:h-[90vh] sm:w-[100%]`}>
+        <h1 className="hero_title sm:text-5xl font-bold pb-[3rem]  ">
+          {info.title || info.name}
+        </h1>
+        <div className="btn__container">
+          <button className="btn__hero p-2   bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 ">
             Play
           </button>
-          <button className=" p-2 bg-opacity-75 rounded-sm transition-all ease-in  duration-100   cursor-pointer hover:bg-gray-700 text-black bg-gray-600 w-28 ">
+          <button className="btn__hero p-2  bg-opacity-75 rounded-sm transition-all ease-in  duration-100   cursor-pointer hover:bg-gray-700 text-black bg-gray-600 ">
             My List
           </button>
         </div>
-        <h1 className="w-96 pt-5">{delimeter(info.overview || " ", 120)}</h1>
+        <h1 className="hero__description w-96 pt-5">
+          {delimeter(info.overview || " ", 120)}
+        </h1>
       </div>
     </header>
   );

@@ -18,9 +18,9 @@ function NavBar() {
   return (
     <div className="nav ">
       <div
-        className={`fixed ${
+        className={`w-[100%] fixed ${
           Show && "bg-slate-900 bg-opacity-90 "
-        } transition-all  duration-700     top-0  w-full h-16 z-50`}
+        } transition-all  duration-700     top-0  w-[100%] h-16 z-50`}
       >
         <div className="">
           <img

@@ -1,3 +1,5 @@
+/* Extra small devices (phones, 639px and down) */
+
 ::-webkit-scrollbar {
   display: none;
 }
