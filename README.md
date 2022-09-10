@@ -18,6 +18,7 @@
 - postcss
 - tailwindcss
 - React-Resposive-Carousel
+- React-Router-Dom
 - More to be added
 
 # Available Scripts

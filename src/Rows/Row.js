@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./Row.css";
 import axios from "../axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -38,7 +38,7 @@ function Rows({ title, fetchMovie, isLarge = false }) {
     infinite: true,
     swipe: true,
     slidesToShow: 5.5,
-    slidesToScroll: 5,
+
     initialSlide: 2,
     lazyLoad: true,
     autoplay: true,
@@ -55,7 +55,7 @@ function Rows({ title, fetchMovie, isLarge = false }) {
         breakpoint: 1280,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 5,
+
           infinite: true,
           dots: false,
         },
@@ -65,7 +65,7 @@ function Rows({ title, fetchMovie, isLarge = false }) {
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 4,
+
           infinite: true,
           dots: false,
         },
@@ -84,7 +84,6 @@ function Rows({ title, fetchMovie, isLarge = false }) {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
         },
       },
     ],
@@ -100,12 +99,12 @@ function Rows({ title, fetchMovie, isLarge = false }) {
             <div
               className={
                 isLarge
-                  ? "sm:h-[250px]   md:h-[450px] md:mt-[10px] pt-[15px] lg:h-[600px] "
-                  : " "
+                  ? "sm:h-[250px]   md:h-[450px] md:mt-[10px] pt-[15px] lg:h-[600px]  wrapper "
+                  : " container"
               }
             >
               <img
-                className={`onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
+                className={` card onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
                   isLarge
                     ? "largePoster md:h-[320px]   md:w-[150px] lg:h-[550px] lg:w-[250px] "
                     : "md:w-[150px]  md:h-[100px] lg:h-[150px] lg:w-[250px] "
@@ -118,7 +117,6 @@ function Rows({ title, fetchMovie, isLarge = false }) {
                   } `
                 }
                 alt={movies.name}
-                onerror="this.style.display='none';"
               />
             </div>
           ))}
