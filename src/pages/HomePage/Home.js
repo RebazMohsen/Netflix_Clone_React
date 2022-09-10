@@ -1,9 +1,9 @@
 import React from "react";
-import NavBar from "./Header/NavBar";
-import Hero from "./HeroImage/Hero";
-import Row from "./Rows/Row";
-import requests from "./requests";
-import Footer from "./Footer/Footer";
+import NavBar from "../../Header/NavBar";
+import Hero from "../../HeroImage/Hero";
+import Row from "../../Rows/Row";
+import requests from "../../requests";
+import Footer from "../../Footer/Footer";
 
 function Home() {
   return (
