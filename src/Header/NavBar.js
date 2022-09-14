@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "./styles.css";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "./../app/authSlice";
+import { Link } from "react-router-dom";
+import "./dropDownMenu.css";
 
 function NavBar() {
+  const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  /* Make dropDownMenu for profile avatar */
   const [card, setCard] = useState();
-
   const [displayPicture, setDisplayPicture] = useState(); //declearing profile picture
 
   useEffect(() => {
@@ -11,13 +16,16 @@ function NavBar() {
     setDisplayPicture(document.querySelector(".display-picture"));
     if (card) {
       displayPicture.addEventListener("click", function () {
-        //onn click on profile picture toggle hidden class from css
+        //onn clickk on profile picture toggle hidden class from css
         card.classList.toggle("hidden");
       });
     }
   }, [card, displayPicture]);
+  /* End of dropDownMenu */
 
-  const [Show, setShow] = useState(false);
+  /* Show and hide NavBar background when scrollY */
+
+  const [Show, setShow] = useState(false); //Default state is false beacause by default scrollY is at the Top
 
   const navShow = () => {
     if (window.scrollY > 100) {
@@ -30,6 +38,7 @@ function NavBar() {
   useEffect(() => {
     window.addEventListener("scroll", navShow);
   }, []);
+  /* End of NavShowHide */
 
   return (
     <div className="nav ">
@@ -38,6 +47,7 @@ function NavBar() {
           Show && "bg-slate-900 bg-opacity-90 "
         } transition-all  duration-700     top-0  w-[100%] h-16 z-50`}
       >
+        {/* Logo TMDB here */}
         <div className="">
           <img
             className=" fixed cursor-pointer object-contain top-1 mt-2 ml-4 left-1 w-28 h-10  "
@@ -46,6 +56,7 @@ function NavBar() {
           />
         </div>
         <ul>
+          {/* Avatar Logo is here */}
           <div className="display-picture ">
             <img
               className=" fixed cursor-pointer object-contain top-4 right-3 w-10 h-10 rounded-md"
@@ -59,14 +70,18 @@ function NavBar() {
             <li>
               <a href=" ">Profile</a>
             </li>
+
             <li>
-              <a href=" ">Account</a>
+              <a href=" ">About Us</a>
             </li>
             <li>
-              <a href=" ">Settings</a>
-            </li>
-            <li>
-              <a href=" ">Log Out</a>
+              <Link
+                to=" "
+                className="bg-indigo-600 p-1 rounded-full text-white px-4 hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                onClick={() => dispatch(logout())}
+              >
+                Logout
+              </Link>
             </li>
           </ul>
         </div>

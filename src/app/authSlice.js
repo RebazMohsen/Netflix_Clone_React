@@ -23,7 +23,7 @@ const authSlice = createSlice({
       state.role = "";
       state.username = "";
       console.log("logout action");
-      localStorage.removeItem("username");
+      localStorage.removeItem("isAuthenticated");
     },
   },
 });
