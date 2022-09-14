@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Hero.css";
-import delimeter from "../delimeter";
-import getRandomInt from "../math";
+import delimeter from "./delimeter";
+import getRandomInt from "./math";
 import axios from "axios";
 
 export default function Hero() {

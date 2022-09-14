@@ -1,14 +1,12 @@
 import React from "react";
-import NavBar from "../../Header/NavBar";
-import Hero from "../../HeroImage/Hero";
-import Row from "../../Rows/Row";
-import requests from "../../requests";
-import Footer from "../../Footer/Footer";
+import Hero from "../../components/HeroImage/Hero";
+import Row from "../../components/Rows/Row";
+import requests from "../../components/axios/requests";
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
   return (
     <div>
-      <NavBar />
       <Hero />
 
       <Row

@@ -4,6 +4,8 @@ import Login from "./pages/LoginPage/Login";
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import About from "./pages/About/About.js";
+import NavBar from "./components/Nav/NavBar";
 
 function App() {
   const auth = useSelector((state) => state.auth);
@@ -14,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const saved = localStorage.getItem("isAuthenticated");
-    console.log(saved);
+
     const initialValue = saved;
     console.log(initialValue);
     setUser(saved);
@@ -23,11 +25,17 @@ function App() {
   useEffect(() => {
     setRoutes(
       <Routes>
-        {user ? (
-          <Route path="/" element={<Home />}></Route>
-        ) : (
-          <Route path="/" element={<Login />}></Route>
-        )}
+        <Route path="/" element={user ? <Home /> : <Login />} />
+
+        <Route
+          path="/About"
+          element={
+            <>
+              <NavBar />
+              <About />
+            </>
+          }
+        />
       </Routes>
     );
   }, [user, auth]);

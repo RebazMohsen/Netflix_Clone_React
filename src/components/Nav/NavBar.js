@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "./../app/authSlice";
+import { useDispatch } from "react-redux";
+import { logout } from "../../app/authSlice";
 import { Link } from "react-router-dom";
 import "./dropDownMenu.css";
 
 function NavBar() {
-  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   /* Make dropDownMenu for profile avatar */
   const [card, setCard] = useState();
@@ -68,15 +67,19 @@ function NavBar() {
         <div className="card hidden">
           <ul>
             <li>
-              <a href=" ">Profile</a>
+              <Link to="/" className="">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/profile" className="">
+                profile
+              </Link>
             </li>
 
             <li>
-              <a href=" ">About Us</a>
-            </li>
-            <li>
               <Link
-                to=" "
+                to={"/"}
                 className="bg-indigo-600 p-1 rounded-full text-white px-4 hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 onClick={() => dispatch(logout())}
               >

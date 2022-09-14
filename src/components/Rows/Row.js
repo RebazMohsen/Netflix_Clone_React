@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Row.css";
-import axios from "../axios";
+import axios from "../axios/axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
