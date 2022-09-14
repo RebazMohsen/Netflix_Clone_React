@@ -3,6 +3,7 @@ import "./login.css";
 import { login } from "../../app/authSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import MainLayout from "../../layout/MainLayout";
 
 function Login() {
   const dispatch = useDispatch();
@@ -29,59 +30,64 @@ function Login() {
   }
 
   return (
-    <div className="login__container">
-      <a
-        className="logo"
-        href="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img
-          src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
-          alt="netflix"
-        />
-      </a>
-      <form onSubmit={submitHandler}>
-        <div className="login">
-          <h1 className="login__title">Sign In</h1>
-          <div className="login__group">
-            <label className="login__group__label " htmlFor="username"></label>
-            <input
-              className="login__group__input"
-              type="username"
-              placeholder="username"
-              required={true}
-              name="username"
-              id="username"
-              value={form.username || ""}
-              onChange={onChangeHandler}
-            />
+    <MainLayout>
+      <div className="login__container">
+        <a
+          className="logo"
+          href="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+            alt="netflix"
+          />
+        </a>
+        <form onSubmit={submitHandler}>
+          <div className="login">
+            <h1 className="login__title">Sign In</h1>
+            <div className="login__group">
+              <label
+                className="login__group__label "
+                htmlFor="username"
+              ></label>
+              <input
+                className="login__group__input"
+                type="username"
+                placeholder="username"
+                required={true}
+                name="username"
+                id="username"
+                value={form.username || ""}
+                onChange={onChangeHandler}
+              />
+            </div>
+            <label className="login__group__label" htmlFor="password"></label>
+            <div className="login__group">
+              <input
+                className="login__group__input"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                value={form.password || ""}
+                onChange={onChangeHandler}
+                required={true}
+              />
+            </div>
+            <button className="login__sign-in" type="submit">
+              Sign In
+            </button>
+            <div className="login__secondary-cta">
+              <p className="login__secondary-cta__text">Remember me</p>
+              <p className="login__secondary-cta__text login__secondary-cta__text--need-help">
+                Need help?
+              </p>
+            </div>
           </div>
-          <label className="login__group__label" htmlFor="password"></label>
-          <div className="login__group">
-            <input
-              className="login__group__input"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              value={form.password || ""}
-              onChange={onChangeHandler}
-              required={true}
-            />
-          </div>
-          <button className="login__sign-in" type="submit">
-            Sign In
-          </button>
-          <div className="login__secondary-cta">
-            <p className="login__secondary-cta__text">Remember me</p>
-            <p className="login__secondary-cta__text login__secondary-cta__text--need-help">
-              Need help?
-            </p>
-          </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    </MainLayout>
   );
 }
 

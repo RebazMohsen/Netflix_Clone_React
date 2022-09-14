@@ -3,10 +3,11 @@ import Hero from "../../components/HeroImage/Hero";
 import Row from "../../components/Rows/Row";
 import requests from "../../components/axios/requests";
 import Footer from "../../components/Footer/Footer";
+import MainLayout from "../../layout/MainLayout";
 
 function Home() {
   return (
-    <div>
+    <MainLayout>
       <Hero />
 
       <Row
@@ -25,7 +26,7 @@ function Home() {
       <Row title={"Crime"} fetchMovie={requests.crime} />
       <div className="p-10 bg-black" />
       <Footer />
-    </div>
+    </MainLayout>
   );
 }
 

@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./about.module.css";
+import MainLayout from "../../layout/MainLayout";
 function About() {
   return (
-    <>
+    <MainLayout>
       <main class="bl_page404">
         <h1>Error 404. The page does not exist</h1>
         <p>
@@ -23,7 +24,7 @@ function About() {
           </a>
         </div>
       </main>
-    </>
+    </MainLayout>
   );
 }
 
