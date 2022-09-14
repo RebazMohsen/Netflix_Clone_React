@@ -97,17 +97,18 @@ function Rows({ title, fetchMovie, isLarge = false }) {
         <Slider {...settings} className="pb-2 ">
           {movies?.map((movie, id) => (
             <div
+              key={id}
               className={
                 isLarge
-                  ? "sm:h-[250px]   md:h-[450px] md:mt-[10px] pt-[15px] lg:h-[600px]  wrapper "
+                  ? "sm:h-[250px]     md:h-[450px] md:mt-[10px] pt-[15px] lg:h-[600px]  wrapper "
                   : " container"
               }
             >
               <img
-                className={` card onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
+                className={`  card   onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
                   isLarge
-                    ? "largePoster md:h-[320px]   md:w-[150px] lg:h-[550px] lg:w-[250px] "
-                    : "md:w-[150px]  md:h-[100px] lg:h-[150px] lg:w-[250px] "
+                    ? "largePoster   md:h-[320px]  md:w-[150px] lg:h-[550px] lg:w-[250px] "
+                    : "md:w-[150px]   md:h-[100px] lg:h-[150px] lg:w-[250px]  "
                 }`}
                 key={id}
                 src={

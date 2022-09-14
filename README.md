@@ -19,6 +19,7 @@
 - tailwindcss
 - React-Resposive-Carousel
 - React-Router-Dom
+- Redux-Toolkit
 - More to be added
 
 # Available Scripts

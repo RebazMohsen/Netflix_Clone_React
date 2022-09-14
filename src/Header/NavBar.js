@@ -1,6 +1,22 @@
 import React, { useState, useEffect } from "react";
+import "./styles.css";
 
 function NavBar() {
+  const [card, setCard] = useState();
+
+  const [displayPicture, setDisplayPicture] = useState(); //declearing profile picture
+
+  useEffect(() => {
+    setCard(document.querySelector(".card"));
+    setDisplayPicture(document.querySelector(".display-picture"));
+    if (card) {
+      displayPicture.addEventListener("click", function () {
+        //onn click on profile picture toggle hidden class from css
+        card.classList.toggle("hidden");
+      });
+    }
+  }, [card, displayPicture]);
+
   const [Show, setShow] = useState(false);
 
   const navShow = () => {
@@ -29,13 +45,30 @@ function NavBar() {
             alt="logo"
           />
         </div>
-
-        <div>
-          <img
-            className=" fixed cursor-pointer object-contain top-4 right-3 w-10 h-10 rounded-md"
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117"
-            alt="avatar"
-          />
+        <ul>
+          <div className="display-picture ">
+            <img
+              className=" fixed cursor-pointer object-contain top-4 right-3 w-10 h-10 rounded-md"
+              src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117"
+              alt="avatar"
+            />
+          </div>
+        </ul>
+        <div className="card hidden">
+          <ul>
+            <li>
+              <a href=" ">Profile</a>
+            </li>
+            <li>
+              <a href=" ">Account</a>
+            </li>
+            <li>
+              <a href=" ">Settings</a>
+            </li>
+            <li>
+              <a href=" ">Log Out</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
