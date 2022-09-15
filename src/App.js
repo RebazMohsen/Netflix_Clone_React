@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import NavBar from "./components/Nav/NavBar";
-import Movie from "./pages/MoviePage/Movie";
+import Movie from "./pages/MoviePage/MoviePage";
 
 function App() {
   const auth = useSelector((state) => state.auth);

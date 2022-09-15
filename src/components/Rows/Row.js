@@ -106,7 +106,7 @@ function Rows({ title, fetchMovie, isLarge = false }) {
                   : " container"
               }
             >
-              <Link to={`/movies/${movies[0].id}`} key={index}>
+              <Link to={`/movies/${movies[index].id}`} key={index}>
                 <img
                   className={`  card   onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
                     isLarge
