@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 function Rows({ title, fetchMovie, isLarge = false }) {
   const [movies, setMovies] = useState([]);
@@ -17,7 +18,8 @@ function Rows({ title, fetchMovie, isLarge = false }) {
       return request;
     }
     fetchData();
-    console.log(movies);
+    /* console.log(movies[0].id); */
+    //test
   }, [fetchMovie]);
 
   if (movies === undefined) {
@@ -95,30 +97,32 @@ function Rows({ title, fetchMovie, isLarge = false }) {
           <h1 className="text-white">{title}</h1>
         </div>
         <Slider {...settings} className="pb-2 ">
-          {movies?.map((movie, id) => (
+          {movies?.map((movie, index) => (
             <div
-              key={id}
+              key={index}
               className={
                 isLarge
                   ? "sm:h-[250px]     md:h-[450px] md:mt-[10px] pt-[15px] lg:h-[600px]  wrapper "
                   : " container"
               }
             >
-              <img
-                className={`  card   onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
-                  isLarge
-                    ? "largePoster   md:h-[320px]  md:w-[150px] lg:h-[550px] lg:w-[250px] "
-                    : "md:w-[150px]   md:h-[100px] lg:h-[150px] lg:w-[250px]  "
-                }`}
-                key={id}
-                src={
-                  movies &&
-                  `https://image.tmdb.org/t/p/original${
-                    isLarge ? movie?.poster_path : movie?.backdrop_path
-                  } `
-                }
-                alt={movies.name}
-              />
+              <Link to={`/movies/${movies[0].id}`} key={index}>
+                <img
+                  className={`  card   onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
+                    isLarge
+                      ? "largePoster   md:h-[320px]  md:w-[150px] lg:h-[550px] lg:w-[250px] "
+                      : "md:w-[150px]   md:h-[100px] lg:h-[150px] lg:w-[250px]  "
+                  }`}
+                  key={index}
+                  src={
+                    movies &&
+                    `https://image.tmdb.org/t/p/original${
+                      isLarge ? movie?.poster_path : movie?.backdrop_path
+                    } `
+                  }
+                  alt={movies.name}
+                />
+              </Link>
             </div>
           ))}
         </Slider>

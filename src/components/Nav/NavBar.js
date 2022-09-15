@@ -71,11 +71,6 @@ function NavBar() {
                 Home
               </Link>
             </li>
-            <li>
-              <Link to="/profile" className="">
-                profile
-              </Link>
-            </li>
 
             <li>
               <Link

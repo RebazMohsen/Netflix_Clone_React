@@ -4,8 +4,9 @@ import Login from "./pages/LoginPage/Login";
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import About from "./pages/About/About.js";
+
 import NavBar from "./components/Nav/NavBar";
+import Movie from "./pages/MoviePage/Movie";
 
 function App() {
   const auth = useSelector((state) => state.auth);
@@ -26,16 +27,7 @@ function App() {
     setRoutes(
       <Routes>
         <Route path="/" element={user ? <Home /> : <Login />} />
-
-        <Route
-          path="/About"
-          element={
-            <>
-              <NavBar />
-              <About />
-            </>
-          }
-        />
+        <Route path="/movies/:id" element={<Movie />} />
       </Routes>
     );
   }, [user, auth]);
