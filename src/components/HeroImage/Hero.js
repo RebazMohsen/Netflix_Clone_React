@@ -9,7 +9,7 @@ export default function Hero() {
   const API_KEY = "8ba3d7653f6bc19597c5b7d8ef22ea73";
   const baseURL = "https://api.themoviedb.org/3";
   const imgBaseURL = "https://image.tmdb.org/t/p/original/";
-  const [info, setInfo] = useState([
+  const [movies, setmovies] = useState([
     {
       length: null,
     },
@@ -23,11 +23,11 @@ export default function Hero() {
       .then((response) => {
         // handle success
 
-        setInfo(
+        setmovies(
           response.data.results[getRandomInt(response.data.results.length - 1)]
         );
 
-        //console.log(info);
+        //console.log(movies);
       })
       .catch(function (error) {
         // handle error
@@ -35,11 +35,11 @@ export default function Hero() {
       })
       .then(function () {
         // always executed
-        console.log("Hello ", `${imgBaseURL}${info.backdrop_path}`);
+        console.log("Hello ", `${imgBaseURL}${movies.backdrop_path}`);
       });
   }, [axios]);
 
-  if (!info) {
+  if (!movies) {
     return <p>Loading...</p>;
   }
 
@@ -47,7 +47,7 @@ export default function Hero() {
     <header
       style={{
         backgroundImage: `url${
-          info && `(${imgBaseURL}${info.backdrop_path} )`
+          movies && `(${imgBaseURL}${movies.backdrop_path} )`
         } `,
       }}
       className="hero__img sm:h-[580px] md:h-[940px] bg-cover  bg-center text-white relative  "
@@ -55,7 +55,7 @@ export default function Hero() {
       <div />
       <div className={`hero_contents  sm:pt-[250px]  sm:h-[90vh] sm:w-[100%]`}>
         <h1 className="hero_title sm:text-5xl font-bold pb-[3rem]  ">
-          {info.title || info.name}
+          {movies.title || movies.name}
         </h1>
         <div className="btn__container">
           <button className="btn__hero p-2   bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 ">
@@ -66,7 +66,7 @@ export default function Hero() {
           </button>
         </div>
         <h1 className="hero__description w-96 pt-5">
-          {delimeter(info.overview || " ", 120)}
+          {delimeter(movies.overview || " ", 120)}
         </h1>
       </div>
     </header>
