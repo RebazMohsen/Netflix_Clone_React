@@ -26,7 +26,7 @@ function Movie() {
       .then(function () {
         // always executed
       });
-  }, [axios]);
+  }, [axios, id]);
   console.log(movie);
 
   if (!movie) {

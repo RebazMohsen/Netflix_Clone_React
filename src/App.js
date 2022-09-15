@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-import NavBar from "./components/Nav/NavBar";
 import Movie from "./pages/MoviePage/MoviePage";
 
 function App() {
@@ -30,7 +29,7 @@ function App() {
         <Route path="/movies/:id" element={<Movie />} />
       </Routes>
     );
-  }, [user, auth]);
+  }, [user, auth, myRoutes]);
 
   return <div>{myRoutes}</div>;
 }

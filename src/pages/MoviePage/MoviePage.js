@@ -1,11 +1,14 @@
 import React from "react";
 import Movie from "../../components/movies/Movie";
+import MainLayout from "../../layout/MainLayout";
+import SimiliarRow from "../../components/similiarRow/SimiliarRow";
 
 function MoviePage() {
   return (
-    <div>
+    <MainLayout>
       <Movie />
-    </div>
+      <SimiliarRow isLarge title={"Similiar Movies"} />
+    </MainLayout>
   );
 }
 
