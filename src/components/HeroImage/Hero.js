@@ -44,14 +44,6 @@ export default function Hero() {
   return (
     <div className="sm:h-[580px] md:h-[940px]">
       <div>
-        {/* <div
-          style={{
-            backgroundImage: `url${
-              movies && `(${imgBaseURL}${movies.backdrop_path} )`
-            } `,
-          }}
-          className="hero__img sm:h-[580px] md:h-[940px] bg-cover  bg-center text-white    "
-        ></div> s      */}
         <div id="grad" className="fade sm:h-[580px] md:h-[940px]       " />
         <div>
           <img

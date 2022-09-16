@@ -54,7 +54,7 @@ function NavBar() {
             alt="logo"
           />
         </div>
-        <ul>
+        <ul id="ul">
           {/* Avatar Logo is here */}
           <div className="display-picture ">
             <img
@@ -65,7 +65,7 @@ function NavBar() {
           </div>
         </ul>
         <div className="card hidden">
-          <ul>
+          <ul id="ul">
             <li>
               <Link to="/" className="">
                 Home

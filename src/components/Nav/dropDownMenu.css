@@ -1,7 +1,7 @@
 .nav {
   position: relative;
 }
-ul {
+#ul {
   list-style: none;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@ ul {
   transition: 0.5s ease;
 }
 
-.card ul {
+.card #ul {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -30,7 +30,7 @@ ul {
   width: 100px;
   padding: 15px;
 }
-.card ul li {
+.card #ul li {
   padding: 5px 0;
   color: #fff;
   font-size: 14px;
