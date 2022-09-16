@@ -5,7 +5,6 @@ import getRandomInt from "./math";
 import axios from "axios";
 
 export default function Hero() {
-  const axios = require("axios").default;
   const API_KEY = "8ba3d7653f6bc19597c5b7d8ef22ea73";
   const baseURL = "https://api.themoviedb.org/3";
   const imgBaseURL = "https://image.tmdb.org/t/p/original/";
@@ -35,25 +34,36 @@ export default function Hero() {
       })
       .then(function () {
         // always executed
-        console.log("Hello ", `${imgBaseURL}${movies.backdrop_path}`);
       });
-  }, [axios]);
+  }, []);
 
   if (!movies) {
     return <p>Loading...</p>;
   }
 
   return (
-    <header
-      style={{
-        backgroundImage: `url${
-          movies && `(${imgBaseURL}${movies.backdrop_path} )`
-        } `,
-      }}
-      className="hero__img sm:h-[580px] md:h-[940px] bg-cover  bg-center text-white relative  "
-    >
-      <div />
-      <div className={`hero_contents  sm:pt-[250px]  sm:h-[90vh] sm:w-[100%]`}>
+    <div className="sm:h-[580px] md:h-[940px]">
+      <div>
+        {/* <div
+          style={{
+            backgroundImage: `url${
+              movies && `(${imgBaseURL}${movies.backdrop_path} )`
+            } `,
+          }}
+          className="hero__img sm:h-[580px] md:h-[940px] bg-cover  bg-center text-white    "
+        ></div> s      */}
+        <div id="grad" className="fade sm:h-[580px] md:h-[940px]       " />
+        <div>
+          <img
+            className="hero__img sm:h-[580px] md:h-[940px] bg-cover absolute  bg-center"
+            src={`${imgBaseURL}${movies.backdrop_path}`}
+            alt="HeroImage"
+          />
+        </div>
+      </div>
+      <div
+        className={`hero_contents  sm:pt-[250px] relative  sm:h-[940px] sm:w-[100%] text-white`}
+      >
         <h1 className="hero_title sm:text-5xl font-bold pb-[3rem]  ">
           {movies.title || movies.name}
         </h1>
@@ -69,6 +79,6 @@ export default function Hero() {
           {delimeter(movies.overview || " ", 120)}
         </h1>
       </div>
-    </header>
+    </div>
   );
 }

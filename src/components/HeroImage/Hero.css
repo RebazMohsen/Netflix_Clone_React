@@ -95,9 +95,26 @@
   }
   .btn__container {
     display: flex;
+    z-index: 2;
   }
 
   .btn__hero {
     width: 120px;
   }
+}
+
+#grad {
+  background-image: linear-gradient(to right, black, rgba(5, 4, 4, 0));
+}
+
+.fade {
+  position: fixed;
+  width: 900px;
+  height: 940px;
+  z-index: -99;
+}
+
+.hero__img {
+  width: 100%;
+  z-index: -9999;
 }

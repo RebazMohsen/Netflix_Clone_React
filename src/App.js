@@ -9,7 +9,6 @@ import Movie from "./pages/MoviePage/MoviePage";
 
 function App() {
   const auth = useSelector((state) => state.auth);
-  const [myRoutes, setRoutes] = useState();
 
   const [user, setUser] = useState();
   // getting stored value
@@ -22,16 +21,14 @@ function App() {
     setUser(saved);
   }, [user, auth]);
 
-  useEffect(() => {
-    setRoutes(
+  return (
+    <div>
       <Routes>
         <Route path="/" element={user ? <Home /> : <Login />} />
-        <Route path="/movies/:id" element={<Movie />} />
+        <Route path="/movies/:id" element={user ? <Movie /> : <Login />} />
       </Routes>
-    );
-  }, [user, auth, myRoutes]);
-
-  return <div>{myRoutes}</div>;
+    </div>
+  );
 }
 
 export default App;
