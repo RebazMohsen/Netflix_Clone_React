@@ -51,7 +51,7 @@ export default function Hero() {
   if (!movies) {
     return <p>Loading...</p>;
   }
-
+  console.log("rand Movie :", movies);
   return (
     <div className="sm:h-[580px] md:h-[940px]">
       <div>
@@ -70,6 +70,13 @@ export default function Hero() {
         <h1 className="hero_title sm:text-5xl font-bold pb-[3rem]  ">
           {movies.title || movies.name}
         </h1>
+        <div className="flex p-4 ">
+          <p className="text-2xl">{movies.media_type}</p>
+          <p className="ml-2 mr-2  text-gray-700 font-extrabold text-2xl ">|</p>
+          <p className="text-2xl">Rating {movies.vote_average}</p>
+          <p className="ml-2 mr-2 text-gray-700 font-extrabold text-2xl ">|</p>
+          <p className="text-2xl">adult : {JSON.stringify(movies.adult)}</p>
+        </div>
         <div className="btn__container">
           <a href={fullScreen} target="_blank" rel="noreferrer">
             <button className="btn__hero p-2   bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 ">

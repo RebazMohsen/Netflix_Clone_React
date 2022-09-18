@@ -8,40 +8,37 @@ function Footer() {
         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-              Resources
-            </h2>
-            <ul className="text-gray-600 dark:text-gray-400">
-              <li className="mb-4">
-                <a href="https://flowbite.com/" className="hover:underline">
-                  Flowbite
-                </a>
-              </li>
-              <li>
-                <a href="https://tailwindcss.com/" className="hover:underline">
-                  Tailwind CSS
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
               Follow us
             </h2>
             <ul className="text-gray-600 dark:text-gray-400">
               <li className="mb-4">
                 <a
-                  href="https://github.com/themesberg/flowbite"
+                  href="https://github.com/RebazMohsen"
                   className="hover:underline "
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   Github
                 </a>
               </li>
-              <li>
+              <li className="mb-4">
                 <a
-                  href="https://discord.gg/4eeurUVvTy"
-                  className="hover:underline"
+                  href="https://www.facebook.com/rebaz.mohsen.56 "
+                  className="hover:underline  "
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  Discord
+                  facebook
+                </a>
+              </li>
+              <li className="mb-4">
+                <a
+                  href="https://www.linkedin.com/in/rebaz-mohsen-a68817170"
+                  className="hover:underline  "
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
                 </a>
               </li>
             </ul>
@@ -68,16 +65,14 @@ function Footer() {
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          © 2022{" "}
-          <a href="https://flowbite.com/" className="hover:underline">
-            Flowbite™
-          </a>
-          . All Rights Reserved.
+          © 2022 By Rebaz . All Rights Reserved.
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
           <a
-            href=" "
+            href="https://www.facebook.com/rebaz.mohsen.56 "
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            target="_blank"
+            rel="noreferrer"
           >
             <svg
               className="w-5 h-5"
@@ -96,6 +91,8 @@ function Footer() {
           <a
             href=" "
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            target="_blank"
+            rel="noreferrer"
           >
             <svg
               className="w-5 h-5"
@@ -144,8 +141,10 @@ function Footer() {
             <span className="sr-only">GitHub account</span>
           </a>
           <a
-            href=" "
+            href="  "
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            target="_blank"
+            rel="noreferrer"
           >
             <svg
               className="w-5 h-5"

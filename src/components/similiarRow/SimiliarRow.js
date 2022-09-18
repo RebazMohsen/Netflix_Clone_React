@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 function SimiliarRow({ title, isLarge = false }) {
   const API_KEY = "8ba3d7653f6bc19597c5b7d8ef22ea73";
-
   const url = window.location.href;
   const id = url.substring(url.lastIndexOf("/") + 1);
 
