@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import Movie from "./pages/MoviePage/MoviePage";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   const auth = useSelector((state) => state.auth);
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={user ? <Home /> : <Login />} />
         <Route path="/movies/:id" element={user ? <Movie /> : <Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
