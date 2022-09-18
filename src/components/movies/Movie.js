@@ -9,6 +9,7 @@ function Movie() {
   const API_KEY = "8ba3d7653f6bc19597c5b7d8ef22ea73";
   const baseURL = "https://api.themoviedb.org/3";
   const imgBaseURL = "https://image.tmdb.org/t/p/original/";
+  const [fullScreen, setFullScreen] = useState();
   useEffect(() => {
     axios
       .get(`${baseURL}/movie/${id}?api_key=${API_KEY}`)
@@ -30,6 +31,10 @@ function Movie() {
       setURL(results)
     );
   });
+
+  useEffect(() => {
+    setFullScreen(URL?.replace("watch", "watch_popup"));
+  }, [URL]);
 
   if (!movie) {
     return <div>Loading...</div>;
@@ -55,7 +60,7 @@ function Movie() {
           {movie.title || movie.name}
         </h1>
         <div className="btn__container">
-          <a href={URL} target="_blank" rel="noreferrer">
+          <a href={fullScreen} target="_blank" rel="noreferrer">
             <button className="btn__hero p-2   bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 ">
               PlayTrailer
             </button>

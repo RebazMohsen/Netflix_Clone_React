@@ -90,6 +90,7 @@ function Rows({ title, fetchMovie, isLarge = false }) {
       },
     ],
   };
+
   return (
     <div className="row-container pt-[31px]    ">
       <div className="pl-[60px]  pr-[60px]">
