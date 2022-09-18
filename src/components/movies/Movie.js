@@ -39,6 +39,7 @@ function Movie() {
   if (!movie) {
     return <div>Loading...</div>;
   }
+  console.log(movie.genres);
   return (
     <div className="md:h-[940px] lg:h-[990px]">
       <div>
@@ -59,6 +60,42 @@ function Movie() {
         <h1 className="hero_title sm:text-5xl font-bold pb-[3rem]  ">
           {movie.title || movie.name}
         </h1>
+        <div className="flex p-4 ">
+          <p className="text-2xl">Rating {movie.vote_average}</p>
+
+          {movie.genres.map((item, id) => {
+            return (
+              <>
+                <>
+                  <p
+                    key={id}
+                    className="ml-2 mr-2 text-gray-700 font-extrabold text-2xl "
+                  >
+                    |
+                  </p>
+                  <p className="text-2xl">{item?.name}</p>
+                </>
+
+                {item?.name.includes("Action") && (
+                  <>
+                    <p
+                      key={id}
+                      className="ml-2 mr-2 text-gray-700 font-extrabold text-2xl "
+                    >
+                      |
+                    </p>
+                    <p
+                      key={id}
+                      className="border-2 border-red-600 text-xs bg-red-600 p-1 "
+                    >
+                      +13
+                    </p>
+                  </>
+                )}
+              </>
+            );
+          })}
+        </div>
         <div className="btn__container">
           <a href={fullScreen} target="_blank" rel="noreferrer">
             <button className="btn__hero p-2   bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 ">

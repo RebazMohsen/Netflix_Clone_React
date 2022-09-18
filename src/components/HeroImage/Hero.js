@@ -74,8 +74,6 @@ export default function Hero() {
           <p className="text-2xl">{movies.media_type}</p>
           <p className="ml-2 mr-2  text-gray-700 font-extrabold text-2xl ">|</p>
           <p className="text-2xl">Rating {movies.vote_average}</p>
-          <p className="ml-2 mr-2 text-gray-700 font-extrabold text-2xl ">|</p>
-          <p className="text-2xl">adult : {JSON.stringify(movies.adult)}</p>
         </div>
         <div className="btn__container">
           <a href={fullScreen} target="_blank" rel="noreferrer">
