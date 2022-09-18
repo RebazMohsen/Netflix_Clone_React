@@ -3,8 +3,11 @@ import "./Hero.css";
 import delimeter from "./delimeter";
 import getRandomInt from "./math";
 import axios from "axios";
+import movieTrailer from "movie-trailer";
 
 export default function Hero() {
+  const [URL, setURL] = useState();
+
   const API_KEY = "8ba3d7653f6bc19597c5b7d8ef22ea73";
   const baseURL = "https://api.themoviedb.org/3";
   const imgBaseURL = "https://image.tmdb.org/t/p/original/";
@@ -32,10 +35,14 @@ export default function Hero() {
         // handle error
         console.log(error);
       })
-      .then(function () {
-        // always executed
-      });
+      .then(function () {});
   }, []);
+
+  useEffect(() => {
+    movieTrailer(null, { tmdbId: movies?.id }).then((results) =>
+      setURL(results)
+    );
+  });
 
   if (!movies) {
     return <p>Loading...</p>;
@@ -60,14 +67,16 @@ export default function Hero() {
           {movies.title || movies.name}
         </h1>
         <div className="btn__container">
-          <button className="btn__hero p-2   bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 ">
-            Play
-          </button>
+          <a href={URL} target="_blank" rel="noreferrer">
+            <button className="btn__hero p-2   bg-opacity-75  rounded-sm transition-all ease-in duration-100   hover:bg-slate-300 cursor-pointer text-black bg-white mr-2 ">
+              Play Trailer
+            </button>
+          </a>
           <button className="btn__hero p-2  bg-opacity-75 rounded-sm transition-all ease-in  duration-100   cursor-pointer hover:bg-gray-700 text-black bg-gray-600 ">
             My List
           </button>
         </div>
-        <h1 className="hero__description w-96 pt-5">
+        <h1 className={`hero__description w-96 pt-5   `}>
           {delimeter(movies.overview || " ", 120)}
         </h1>
       </div>

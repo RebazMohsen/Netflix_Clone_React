@@ -3,7 +3,6 @@ import "./login.css";
 import { login } from "../../app/authSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import MainLayout from "../../layout/MainLayout";
 
 function Login() {
   const dispatch = useDispatch();

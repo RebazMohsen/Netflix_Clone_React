@@ -91,12 +91,12 @@ function Rows({ title, fetchMovie, isLarge = false }) {
     ],
   };
   return (
-    <div className="row-container pt-[31px]   ">
-      <div className="pl-[60px] pr-[60px]">
+    <div className="row-container pt-[31px]    ">
+      <div className="pl-[60px]  pr-[60px]">
         <div>
           <h1 className="text-white">{title}</h1>
         </div>
-        <Slider {...settings} className="pb-2 ">
+        <Slider {...settings} className="pb-2  ">
           {movies?.map((movie, index) => (
             <div
               key={index}
@@ -106,9 +106,13 @@ function Rows({ title, fetchMovie, isLarge = false }) {
                   : " container"
               }
             >
-              <Link to={`/movies/${movies[index].id}`} key={index}>
+              <Link
+                to={`/movies/${movies[index].id}`}
+                key={index}
+                className="cursor-default"
+              >
                 <img
-                  className={`  card   onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
+                  className={`cursor-pointer   rounded-2xl   card   onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
                     isLarge
                       ? "largePoster   md:h-[320px]  md:w-[150px] lg:h-[550px] lg:w-[250px] "
                       : "md:w-[150px]   md:h-[100px] lg:h-[150px] lg:w-[250px]  "

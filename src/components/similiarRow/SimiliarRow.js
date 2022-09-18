@@ -108,9 +108,13 @@ function SimiliarRow({ title, isLarge = false }) {
                   : " container"
               }
             >
-              <Link to={`/movies/${movies[index].id}`} key={index}>
+              <Link
+                to={`/movies/${movies[index].id}`}
+                key={index}
+                className="cursor-default"
+              >
                 <img
-                  className={`  card   onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
+                  className={`cursor-pointer rounded-2xl   card   onHover hover:shadow-2xl transition-all duration-700   mt-[15px]  mr-6 ${
                     isLarge
                       ? "largePoster   md:h-[320px]  md:w-[150px] lg:h-[550px] lg:w-[250px] "
                       : "md:w-[150px]   md:h-[100px] lg:h-[150px] lg:w-[250px]  "

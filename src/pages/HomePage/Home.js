@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../../components/HeroImage/Hero";
 import Row from "../../components/Rows/Row";
 import requests from "../../components/axios/requests";
-import Footer from "../../components/Footer/Footer";
+
 import MainLayout from "../../layout/MainLayout";
 
 function Home() {
@@ -25,7 +25,6 @@ function Home() {
       <Row title={"Horror"} fetchMovie={requests.Horror} />
       <Row title={"Crime"} fetchMovie={requests.crime} />
       <div className="p-10 bg-black" />
-      <Footer />
     </MainLayout>
   );
 }
