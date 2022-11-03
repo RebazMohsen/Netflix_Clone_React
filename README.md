@@ -1,6 +1,6 @@
 # Movie streaming website for capstone project
 
-# Functionalities to be added
+# Functionalities
 
 - Netflix Movies
 - Upcoming Movies
