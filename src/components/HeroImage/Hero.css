@@ -7,6 +7,7 @@
   }
   .hero__description {
     font-size: 15px;
+    width: 50%;
   }
 
   .hero_contents {
@@ -111,6 +112,7 @@
   position: fixed;
   width: 900px;
   /* height: 940px; */
+
   z-index: -99;
 }
 

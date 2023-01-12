@@ -53,12 +53,15 @@ export default function Hero() {
   }
   console.log("rand Movie :", movies);
   return (
-    <div className="sm:h-[580px] md:h-[940px]">
-      <div>
-        <div id="grad" className="fade sm:h-[580px] md:h-[940px]       " />
-        <div>
+    <div className="sm:h-[580px] md:h-[940px] xsm:h-[580px] ">
+      <div className=" ">
+        <div className=" ">
+          <div
+            id="grad"
+            className="fade sm:h-[580px] md:h-[940px] xsm:h-[580px]    "
+          />
           <img
-            className="hero__img sm:h-[580px] md:h-[940px] bg-cover absolute  bg-center"
+            className="hero__img xsm:h-[580px]  sm:h-[580px]  md:h-[940px] bg-cover absolute  bg-center"
             src={`${imgBaseURL}${movies.backdrop_path}`}
             alt="HeroImage"
           />

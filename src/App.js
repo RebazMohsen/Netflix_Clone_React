@@ -24,11 +24,18 @@ function App() {
 
   return (
     <div>
-      <Routes>
-        <Route path="/" element={user ? <Home /> : <Login />} />
-        <Route path="/movies/:id" element={user ? <Movie /> : <Login />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="p-10 small:flex      items-center support:hidden h-screen    w-[98%]  ">
+        <p className="text-sm font-bold   text-center w-[85%]          ">
+          Your device is not supported, Enjoy Whatching on bigger screens....!
+        </p>
+      </div>
+      <div className="small:hidden    ">
+        <Routes>
+          <Route path="/" element={user ? <Home /> : <Login />} />
+          <Route path="/movies/:id" element={user ? <Movie /> : <Login />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
     </div>
   );
 }

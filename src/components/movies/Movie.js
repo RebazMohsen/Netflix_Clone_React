@@ -68,7 +68,7 @@ function Movie() {
               <>
                 <>
                   <p
-                    key={id}
+                    /*   key={id} */
                     className="ml-2 mr-2 text-gray-700 font-extrabold text-2xl "
                   >
                     |
@@ -79,13 +79,13 @@ function Movie() {
                 {item?.name.includes("Action") && (
                   <>
                     <p
-                      key={id}
+                      /*  key={id} */
                       className="ml-2 mr-2 text-gray-700 font-extrabold text-2xl "
                     >
                       |
                     </p>
                     <p
-                      key={id}
+                      /* key={id} */
                       className="border-2 border-red-600 text-xs bg-red-600 p-1 "
                     >
                       +13
