@@ -4,8 +4,15 @@ import delimeter from "./delimeter";
 import getRandomInt from "./math";
 import axios from "axios";
 import movieTrailer from "movie-trailer";
+import HeroLoader from "../Loader/HeroLoader";
 
 export default function Hero() {
+  //Shows the loading skeleton for some time
+  const [show, setShow] = useState(true);
+  setTimeout(() => {
+    setShow(false);
+  }, 5000); // 5 seconds
+
   const [URL, setURL] = useState();
   const API_KEY = "8ba3d7653f6bc19597c5b7d8ef22ea73";
   const baseURL = "https://api.themoviedb.org/3";
@@ -48,18 +55,19 @@ export default function Hero() {
     setFullScreen(URL?.replace("watch", "watch_popup"));
   }, [URL]);
 
-  if (!movies) {
-    return <p>Loading...</p>;
+  if (!movies || show) {
+    return (
+      <div>
+        <HeroLoader />
+      </div>
+    );
   }
   console.log("rand Movie :", movies);
   return (
     <div className="sm:h-[580px] md:h-[940px] xsm:h-[580px] ">
       <div className=" ">
         <div className=" ">
-          <div
-            id="grad"
-            className="fade sm:h-[580px] md:h-[940px] xsm:h-[580px]    "
-          />
+          <div id="grad" className="fade    " />
           <img
             className="hero__img xsm:h-[580px]  sm:h-[580px]  md:h-[940px] bg-cover absolute  bg-center"
             src={`${imgBaseURL}${movies.backdrop_path}`}

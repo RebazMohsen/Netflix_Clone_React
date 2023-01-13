@@ -111,7 +111,7 @@
 .fade {
   position: fixed;
   width: 900px;
-  /* height: 940px; */
+  height: 940px;
 
   z-index: -99;
 }

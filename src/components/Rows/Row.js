@@ -7,7 +7,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 
+import RowsLoader from "../Loader/RowsLoader";
+
 function Rows({ title, fetchMovie, isLarge = false }) {
+  //Shows the loading skeleton for some time
+  const [show, setShow] = useState(true);
+  setTimeout(() => {
+    setShow(false);
+  }, 5000); // 5 seconds
+
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -23,11 +31,19 @@ function Rows({ title, fetchMovie, isLarge = false }) {
   }, [fetchMovie]);
 
   if (movies === undefined) {
-    return <h1>Error</h1>;
+    return (
+      <div>
+        <RowsLoader />
+      </div>
+    );
   }
 
-  if (!movies) {
-    return <p>loading</p>;
+  if (!movies || show) {
+    return (
+      <div>
+        <RowsLoader />
+      </div>
+    );
   }
 
   var settings = {
